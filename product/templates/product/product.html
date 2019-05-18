@@ -1,0 +1,15 @@
+<h1>Product</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="file">
+    <button type="submit">Upload</button>
+  </form>
+  <table>
+    {% for r in products %}
+      <tr>
+        <td>{{r.name}}</td>
+        <td>{{r.sku}}</td>
+        <td>{{r.description}}</td>
+      </tr>
+    {% endfor %}
+  </table>
